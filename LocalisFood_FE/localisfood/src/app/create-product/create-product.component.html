@@ -1,0 +1,63 @@
+<div class="Create-Product-section">
+    <div class="row justify-content-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" style="text-align: center">
+                    <h4>Ajouter un produit</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="creatProductForm" (ngSubmit)="creerProd()">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right"> Nom du produit</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'name'" id="name" class="form-control" name="name" required
+                                    autofocus>
+                                <span *ngIf="!creatProductForm.get('name')?.valid && creatProductForm.get('name')?.touched">
+                                    Please provide a valid product name
+                                </span>                                    
+                            </div>
+                        </div>
+  
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Description du produit</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'description'"class="form-control" required autofocus>
+                                <span *ngIf="!creatProductForm.get('description')?.valid && creatProductForm.get('description')?.touched">
+                                    Please provide a valid description
+                                </span>                                 
+                            </div>
+                        </div>
+  
+                        <div class="form-group row">
+                            <label for="prix" class="col-md-4 col-form-label text-md-right">prix du produit</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'prix'" id="prix" class="form-control" name="prix" required>
+                                <span *ngIf="!creatProductForm.get('prix')?.valid && creatProductForm.get('prix')?.touched">
+                                    Please provide a valid price
+                                </span>  
+                            </div>
+                        </div>
+  
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="file" (change)="onFileChanged($event)">                       
+                            </div>
+                            <div class="col-md-6">
+                                <input type="button" (click)="onUpload()" value="upload">
+                            </div>
+                        </div>
+
+                        <span class="col-md-6 offset-md-4">
+                            <button type="submit" class="sign-up">
+                               Creer produit
+                            </button>                           
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+  
