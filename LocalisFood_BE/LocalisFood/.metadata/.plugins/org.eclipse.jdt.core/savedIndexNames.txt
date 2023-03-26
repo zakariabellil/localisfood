@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\15142\Desktop\LocalisFood\LocalisFood_BE\LocalisFood\.metadata\.plugins\org.eclipse.jdt.core
